@@ -1,0 +1,497 @@
+<!doctype html>
+<!--
+  Design read: 원룸 1인 가구를 위한 생활용품 랜딩 페이지(쿠팡 구매 유도), 실용적이고 깔끔한 언어,
+  native HTML/CSS/JS + 시스템 한글 글꼴(웹 글꼴 다운로드 없음), 레퍼런스(reference-image1)의 밝은 회색 바탕 · 단일 레드 포인트 · 큰 라운드 카드.
+  Dials: DESIGN_VARIANCE 6 / MOTION_INTENSITY 4 / VISUAL_DENSITY 4
+  콘텐츠 기준: 01-landing-page-plan.md
+-->
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>좁은 주방 롤매트 안내 | 코멧 키친 실리콘 식기건조 롤매트</title>
+  <meta name="description"
+    content="그릇은 싱크볼 위에서 말리고, 조리대는 온전히 요리에 쓰세요. 펼치면 52 × 33cm, 다 쓰면 돌돌 말아 두는 실리콘 식기건조 롤매트 안내 페이지예요.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preload" as="image" href="assets/optimized/product1-image1-1000.webp"
+    imagesrcset="assets/optimized/product1-image1-600.webp 600w, assets/optimized/product1-image1-1000.webp 1000w"
+    imagesizes="(min-width: 1024px) 50vw, 100vw" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <!-- 헤더 -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero">좁은 주방 롤매트 안내</a>
+      <a class="header-link js-size-link" href="#size-check">사이즈 확인</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. 히어로 -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <p class="hero-call">오늘도 식기건조대 옆 좁은 틈에 도마를 끼워 놓고 요리하셨나요?</p>
+
+        <h1 class="hero-title" id="hero-title">그릇은 싱크볼 위에서 말리고,<br>조리대는 온전히 요리에 쓰세요.</h1>
+
+        <figure class="hero-media">
+          <div class="hero-photo">
+            <img src="assets/optimized/product1-image1-1000.webp"
+              srcset="assets/optimized/product1-image1-600.webp 600w, assets/optimized/product1-image1-1000.webp 1000w"
+              sizes="(min-width: 1024px) 50vw, 100vw" width="1000" height="1000" fetchpriority="high"
+              alt="싱크볼 위에 펼친 회색 실리콘 롤매트에 흰 그릇과 머그컵이 놓여 있고, 옆 조리대는 비어 있는 모습">
+            <span class="hero-pointer">여기를 굴리면 펼쳐져요</span>
+          </div>
+          <a class="hero-inset" href="#roll-storage" data-highlight="roll-storage">
+            <img src="assets/optimized/product1-image8-1000.webp"
+              srcset="assets/optimized/product1-image8-600.webp 600w, assets/optimized/product1-image8-1000.webp 1000w"
+              sizes="(min-width: 1024px) 240px, 34vw" width="1000" height="1000" alt="돌돌 말린 회색 롤매트가 수전 옆 벽에 세워져 보관된 모습">
+            <span class="hero-inset-caption">다 쓰면 이렇게 말아 둬요</span>
+          </a>
+        </figure>
+
+        <p class="hero-sub">씻은 그릇은 싱크볼 위에 펼친 롤매트에 올려 두세요. 물기는 그대로 싱크볼로 떨어지고, 그릇이 다 마르면 매트는 돌돌 말아 수전 옆에 세워 두면 돼요.</p>
+
+        <ul class="chips" aria-label="핵심 특징">
+          <li>조리대를 차지하지 않아요</li>
+          <li>필요한 만큼만 펼쳐요</li>
+          <li>다 쓰면 돌돌 말아 둬요</li>
+        </ul>
+
+        <div class="hero-cta" id="cta-hero">
+          <a class="btn btn-primary js-coupang-cta" id="cta-hero-button" data-cta="hero" href="https://link.coupang.com/a/hCfno91BZs"
+            target="_blank" rel="sponsored noopener">쿠팡에서 가격·옵션 보기</a>
+          <p class="cta-disclosure">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+          <p class="cta-note">가격과 배송, 교환·반품 조건은 쿠팡에서 확인하고 결정하세요.</p>
+          <a class="text-link js-size-link" href="#size-check">펼치면 52 × 33cm, 우리 집 싱크대에 맞을까요? <span
+              aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#space-change">조리대가 어떻게 달라지는지 보기 <span class="scroll-cue-arrow"
+          aria-hidden="true">↓</span></a>
+      <span class="hero-sentinel" aria-hidden="true"></span>
+    </section>
+
+    <!-- 2. 고통 묘사 -->
+    <section class="section pain" id="pain" aria-labelledby="pain-title">
+      <div class="container">
+        <div class="section-head pain-head" data-reveal>
+          <h2 class="section-title" id="pain-title">요리를 시작하기도 전에, 자리부터 만들어야 하죠</h2>
+          <p class="section-lead">건조대 하나가 조리대를 거의 다 차지하는 원룸 주방. 저녁 한 끼를 차리려 해도 뭔가를 먼저 치워야 해요.</p>
+        </div>
+
+        <ul class="pain-list">
+          <li data-reveal>
+            <h3>도마를 놓으려면 건조대부터 밀어야 해요</h3>
+            <p>마른 그릇을 찬장에 넣고 건조대를 벽 쪽으로 밀어야 겨우 도마 하나가 들어가요.</p>
+          </li>
+          <li data-reveal>
+            <h3>요리하면서 설거지를 할 수가 없어요</h3>
+            <p>건조대는 이미 꽉 차 있어서, 요리하며 나온 냄비와 볼은 싱크볼에 그대로 쌓여 가요.</p>
+          </li>
+          <li data-reveal>
+            <h3>컵 몇 개 말리자고 건조대가 하루 종일 그 자리에</h3>
+            <p>말릴 건 머그컵 하나와 수저 몇 개뿐인데, 건조대와 물받침은 늘 조리대 한쪽을 차지하고 있어요.</p>
+          </li>
+        </ul>
+
+        <p class="pain-question" data-reveal>그렇다고 건조대를 치우면, 씻은 그릇은 어디에 두죠?</p>
+      </div>
+    </section>
+
+    <!-- 3. 해결책과 변화 -->
+    <section class="section change" id="space-change" aria-labelledby="change-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title" id="change-title">그릇은 싱크볼 위로, 조리대는 비워 두세요</h2>
+          <p class="section-lead">싱크볼 위에 롤매트를 걸쳐 펼치면, 거기가 바로 그릇 말리는 자리예요. 이제 조리대에는 건조대를 두지 않아도 돼요.</p>
+        </div>
+
+        <div class="change-grid">
+          <article class="card change-card c1" data-reveal>
+            <figure>
+              <img src="assets/optimized/product1-image3-1000.webp"
+                srcset="assets/optimized/product1-image3-600.webp 600w, assets/optimized/product1-image3-1000.webp 1000w"
+                sizes="(min-width: 1024px) 50vw, 100vw" width="1000" height="1000" loading="lazy"
+                alt="수전 아래에서 컵을 씻으며, 옆에 펼친 회색 롤매트에 접시와 수저를 올려 둔 모습">
+              <figcaption>씻자마자 바로 옆에</figcaption>
+            </figure>
+            <h3>씻은 그릇은 바로 옆에 올려 두세요</h3>
+            <p>매트가 싱크볼 위에 걸쳐 있어서, 씻은 그릇을 손 닿는 곳에 바로 올리면 돼요. 요리하면서 설거지를 해도 자리가 겹치지 않아요.</p>
+          </article>
+
+          <article class="card change-card c2" data-reveal>
+            <figure>
+              <img src="assets/optimized/product1-image4-1000.webp"
+                srcset="assets/optimized/product1-image4-600.webp 600w, assets/optimized/product1-image4-1000.webp 1000w"
+                sizes="(min-width: 768px) 38vw, 100vw" width="1000" height="1000" loading="lazy"
+                alt="젖은 흰 머그를 회색 롤매트 위에 엎어 올리자 물방울이 봉 사이로 떨어지는 모습">
+              <figcaption>물은 봉 사이로 바로 싱크볼에</figcaption>
+            </figure>
+            <h3>물받침을 비울 일이 없어요</h3>
+            <p>그릇에서 흐른 물은 봉 사이로 떨어져 바로 싱크볼로 빠져요.</p>
+          </article>
+
+          <article class="card change-card c4" id="roll-storage" data-reveal>
+            <figure>
+              <img src="assets/optimized/product1-image8-1000.webp"
+                srcset="assets/optimized/product1-image8-600.webp 600w, assets/optimized/product1-image8-1000.webp 1000w"
+                sizes="(min-width: 768px) 38vw, 100vw" width="1000" height="1000" loading="lazy"
+                alt="돌돌 말린 회색 롤매트가 수전 옆 벽에 세워져 있는 모습">
+              <figcaption>말아서 수전 옆에 세워 둔 모습</figcaption>
+            </figure>
+            <h3>다 쓰면 돌돌 말아 세워 두세요</h3>
+            <p>그릇이 다 마르면 매트를 말아 수전 옆이나 틈새에 세워 두세요. 펼쳐 놓았을 때보다 자리를 훨씬 덜 차지해요.</p>
+          </article>
+
+          <article class="card change-card c3" data-reveal>
+            <div class="c3-media">
+              <figure>
+                <img src="assets/optimized/crop-narrow.webp" width="333" height="352" loading="lazy"
+                  alt="회색 롤매트를 좁게 펼쳐 머그컵 세 개만 올린 모습">
+                <figcaption>좁게 펼쳤을 때</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/optimized/product1-image5-1000.webp"
+                  srcset="assets/optimized/product1-image5-600.webp 600w, assets/optimized/product1-image5-1000.webp 1000w"
+                  sizes="(min-width: 768px) 25vw, 50vw" width="1000" height="1000" loading="lazy"
+                  alt="회색 롤매트를 넓게 펼쳐 그릇, 머그컵, 유리컵을 올린 모습">
+                <figcaption>넓게 펼쳤을 때</figcaption>
+              </figure>
+            </div>
+            <div class="c3-text">
+              <h3>그릇 양에 맞춰 필요한 만큼만 펼쳐요</h3>
+              <p>컵 몇 개뿐인 날엔 좁게, 설거지가 많은 날엔 넓게. 말린 쪽을 굴려 폭을 맞추면 돼요.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 증거 -->
+    <section class="section proof" id="proof" aria-labelledby="proof-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">판매처 표기 그대로</p>
+          <h2 class="section-title" id="proof-title">규격과 사용법, 그대로 보여 드릴게요</h2>
+          <p class="section-lead">상세페이지에 적힌 수치와 실제로 쓰는 순서를 그대로 옮겼어요.</p>
+        </div>
+
+        <div class="spec-grid">
+          <article class="card spec s1" data-reveal>
+            <div class="spec-media"><img src="assets/optimized/product1-image9-1000.webp"
+                srcset="assets/optimized/product1-image9-600.webp 600w, assets/optimized/product1-image9-1000.webp 1000w"
+                sizes="(min-width: 1024px) 50vw, 100vw" width="1000" height="1000" loading="lazy"
+                alt="흰 배경 위에 정면으로 펼쳐 놓은 회색 실리콘 롤매트"></div>
+            <p class="spec-value">52 × 33cm</p>
+            <p>끝까지 펼쳤을 때 크기예요. 두께는 0.8cm, 무게는 1.04kg이에요.</p>
+            <p class="spec-source">판매처 상세페이지 제품 정보 기준</p>
+          </article>
+
+          <article class="card spec s2" data-reveal>
+            <div class="spec-media"><img src="assets/optimized/product1-image6-1000.webp"
+                srcset="assets/optimized/product1-image6-600.webp 600w, assets/optimized/product1-image6-1000.webp 1000w"
+                sizes="(min-width: 768px) 38vw, 100vw" width="1000" height="1000" loading="lazy"
+                alt="회색 롤매트 위에 흰 볼 두 개, 유리컵 두 개, 프라이팬을 함께 올려 둔 모습"></div>
+            <p class="spec-value">최대 10kg</p>
+            <p>봉 속이 스틸이라 그릇과 프라이팬을 함께 올려도 든든해요.</p>
+            <p class="spec-source">판매처 상세페이지 표기</p>
+          </article>
+
+          <article class="card spec s3" data-reveal>
+            <div class="spec-media is-round"><img src="assets/optimized/crop-coating.webp" width="180" height="180"
+                loading="lazy" alt="실리콘으로 코팅된 회색 봉을 가까이서 본 모습"></div>
+            <p class="spec-value">일체형 실리콘 코팅</p>
+            <p>봉 전체를 실리콘으로 감싸 물기와 습기에 강해요.</p>
+            <p class="spec-source">판매처 상세페이지 표기</p>
+          </article>
+
+          <article class="card spec s4" data-reveal>
+            <div class="spec-media"><img src="assets/optimized/product1-image7-1000.webp"
+                srcset="assets/optimized/product1-image7-600.webp 600w, assets/optimized/product1-image7-1000.webp 1000w"
+                sizes="(min-width: 1024px) 50vw, 100vw" width="1000" height="1000" loading="lazy"
+                alt="돌돌 만 회색 롤매트를 수전의 흐르는 물에 헹구는 모습"></div>
+            <p class="spec-value">물로 헹구면 끝</p>
+            <p>다 쓰면 흐르는 물에 헹구거나 부드러운 행주로 가볍게 닦아 주세요.</p>
+            <p class="spec-source">판매처 상세페이지 관리 안내</p>
+          </article>
+        </div>
+
+        <div class="steps-wrap">
+          <h3 class="steps-title" data-reveal>이렇게 쓰면 돼요</h3>
+          <ol class="steps">
+            <li data-reveal>
+              <div class="step-media"><img src="assets/optimized/crop-unroll.webp" width="660" height="700"
+                  loading="lazy" alt="싱크볼 위에 올린 회색 롤매트의 말린 쪽을 양손으로 굴려 펼치는 모습"></div>
+              <div class="step-text">
+                <h4>싱크볼 위에 올려 펼치기</h4>
+                <p>봉 양쪽 끝이 싱크볼 테두리에 걸치도록 올린 뒤, 말린 쪽을 굴려 필요한 만큼 펼쳐요.</p>
+              </div>
+            </li>
+            <li data-reveal>
+              <div class="step-media"><img src="assets/optimized/product1-image2-1000.webp"
+                  srcset="assets/optimized/product1-image2-600.webp 600w, assets/optimized/product1-image2-1000.webp 1000w"
+                  sizes="(min-width: 768px) 30vw, 100vw" width="1000" height="1000" loading="lazy"
+                  alt="넓게 펼친 회색 롤매트 위에 머그컵과 유리컵을 엎어 올려 둔 모습"></div>
+              <div class="step-text">
+                <h4>씻은 그릇 엎어 두기</h4>
+                <p>컵과 그릇은 입구가 아래로 가도록 엎어 두세요. 물은 봉 사이로 빠져요.</p>
+              </div>
+            </li>
+            <li data-reveal>
+              <div class="step-media"><img src="assets/optimized/product1-image8-1000.webp"
+                  srcset="assets/optimized/product1-image8-600.webp 600w, assets/optimized/product1-image8-1000.webp 1000w"
+                  sizes="(min-width: 768px) 30vw, 100vw" width="1000" height="1000" loading="lazy" class="pos-rolled"
+                  alt="돌돌 만 회색 롤매트를 수전 옆 벽에 세워 둔 모습"></div>
+              <div class="step-text">
+                <h4>다 마르면 말아서 세워 두기</h4>
+                <p>그릇을 치운 뒤 매트를 돌돌 말아 수전 옆이나 틈새에 세워 두세요.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- 구매 후기: 사용자가 직접 모아 준 후기 3건(2026-10-06 전달)에서 원문 문장만 발췌. 제목은 요약, 인용은 원문 그대로 -->
+        <div class="reviews" id="proof-reviews">
+          <h3 class="reviews-title" data-reveal>먼저 써 본 분들의 후기</h3>
+          <div class="review-grid">
+            <figure class="review" data-reveal>
+              <h4 class="review-summary">다 쓰면 작게 말아 둘 수 있어요</h4>
+              <blockquote>
+                <p>“생각보다 가볍고 본인이 원하는 크기대로 사용 가능해요! 설거지 건조 다 되면 작게 접어둘 수 있고 공간 활용 엄청 좋아요!”</p>
+              </blockquote>
+              <figcaption>구매 색상: 그레이</figcaption>
+            </figure>
+
+            <figure class="review" data-reveal>
+              <h4 class="review-summary">무게 있는 그릇도 탄탄하게 버텨요</h4>
+              <blockquote>
+                <p>“냄비처럼 조금 무게가 있는 물건을 올려두어도 생각보다 탄탄하게 잘 버텨줘요. 사용하지 않을 때는 돌돌 말아서 싱크대 한쪽에 올려두면 되니까 보관하기도 정말 편해요.”</p>
+              </blockquote>
+              <figcaption>구매 색상: 화이트</figcaption>
+            </figure>
+
+            <figure class="review" data-reveal>
+              <h4 class="review-summary">설거지 적은 날엔 펼치기만 하면 끝</h4>
+              <blockquote>
+                <p>“설거지 양이 적을 때는 이것만 쓱 펼쳐서 말리면 되니까 정말 편해요. 구매하시기 전에 우리 집 싱크대 볼 깊이와 가로 길이를 미리 체크해 보시는 것을 추천합니다!”</p>
+              </blockquote>
+              <figcaption>구매 색상: 화이트 · <a class="text-link js-size-link" href="#size-check">사이즈 확인하기 <span aria-hidden="true">↓</span></a></figcaption>
+            </figure>
+          </div>
+          <p class="fine-print reviews-note">실제 구매 후기 중 일부를 발췌했어요. 문장은 원문 그대로 옮기고 길이만 줄였어요.</p>
+        </div>
+
+        <div class="spec-table-wrap" data-reveal>
+          <button type="button" class="disclosure" id="spec-toggle" aria-expanded="true" aria-controls="spec-table"
+            data-open-label="제품 정보 접기" data-closed-label="제품 정보 자세히 보기">제품 정보 접기</button>
+          <div class="spec-table" id="spec-table">
+            <dl>
+              <div>
+                <dt>제품명</dt>
+                <dd>코멧 키친 실리콘 식기건조 롤매트</dd>
+              </div>
+              <div>
+                <dt>사이즈</dt>
+                <dd>52 × 33 × 0.8 cm</dd>
+              </div>
+              <div>
+                <dt>색상</dt>
+                <dd>화이트, 그레이</dd>
+              </div>
+              <div>
+                <dt>중량</dt>
+                <dd>1.04 kg</dd>
+              </div>
+              <div>
+                <dt>재질</dt>
+                <dd>실리콘, 철재(아연도금)</dd>
+              </div>
+              <div>
+                <dt>수입자·판매자</dt>
+                <dd>씨피엘비㈜</dd>
+              </div>
+              <div>
+                <dt>제조국</dt>
+                <dd>중국</dd>
+              </div>
+            </dl>
+            <p class="fine-print">크기는 재는 위치와 방법에 따라 조금 다를 수 있어요. 패키지가 바뀌는 중이라 이전 패키지나 새 패키지 중 하나로 배송될 수 있지만, 품질과 내용물은
+              같아요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 구매 전 걱정 (FAQ) -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title" id="faq-title">주문하기 전에 꼭 확인할 세 가지</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item" id="size-check">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-q" id="faq-q1" aria-expanded="true" aria-controls="faq-a1">
+                <span>우리 집 싱크대에 맞을까요?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1">
+              <div class="faq-a-grid">
+                <div class="faq-a-text">
+                  <p>끝까지 펼친 크기는 봉 길이 방향으로 52cm, 펼치는 방향으로 33cm예요. 봉 양쪽 끝이 싱크볼 테두리에 걸쳐져야 하니, 주문 전에 줄자로 두 가지만 확인해 주세요.</p>
+                  <ol class="measure-list">
+                    <li>싱크볼 안쪽 가로 폭이 52cm보다 좁은가요?</li>
+                    <li>그 양쪽에 매트 끝을 올려 둘 테두리가 있나요?</li>
+                  </ol>
+                  <p>안쪽 폭이 52cm와 거의 같거나 더 넓으면 매트가 싱크볼 안으로 빠질 수 있어요. 펼치는 방향(33cm)은 필요한 만큼만 펼쳐 쓰면 되니, 싱크볼 세로 길이에 딱 맞출 필요는
+                    없어요.</p>
+                  <p class="fine-print">크기는 재는 위치와 방법에 따라 조금 다를 수 있어요. (판매처 표기)</p>
+                </div>
+                <div class="faq-a-media">
+                  <figure>
+                    <img src="assets/optimized/crop-size.webp" width="640" height="440" loading="lazy"
+                      alt="가로 52cm, 세로 33cm로 표시된 회색 롤매트 치수 도면">
+                    <figcaption>펼쳤을 때 52 × 33cm</figcaption>
+                  </figure>
+                  <figure>
+                    <!-- 측정 위치 도식: 사진 자료가 아닌 정보 도형이라 직접 그림 (기획서 3-4, 5-6) -->
+                    <svg class="sink-diagram" viewBox="0 0 320 190" role="img" aria-labelledby="sink-diagram-title">
+                      <title id="sink-diagram-title">싱크볼 안쪽 가로 폭과 양쪽 테두리를 표시한 도식</title>
+                      <defs>
+                        <marker id="arrow-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+                          orient="auto-start-reverse">
+                          <path d="M0 0 L10 5 L0 10 z" class="diagram-accent-fill" />
+                        </marker>
+                      </defs>
+                      <rect x="8" y="22" width="304" height="140" rx="18" class="diagram-rim" />
+                      <rect x="52" y="44" width="216" height="96" rx="12" class="diagram-bowl" />
+                      <line x1="56" y1="92" x2="264" y2="92" class="diagram-arrow" marker-start="url(#arrow-head)"
+                        marker-end="url(#arrow-head)" />
+                      <text x="160" y="80" text-anchor="middle" class="diagram-label diagram-strong">안쪽 가로 폭</text>
+                      <text x="160" y="116" text-anchor="middle" class="diagram-label">52cm보다 좁은지</text>
+                      <text x="30" y="182" text-anchor="middle" class="diagram-label">테두리</text>
+                      <text x="290" y="182" text-anchor="middle" class="diagram-label">테두리</text>
+                      <line x1="30" y1="168" x2="30" y2="150" class="diagram-tick" />
+                      <line x1="290" y1="168" x2="290" y2="150" class="diagram-tick" />
+                    </svg>
+                    <figcaption>여기를 재 보세요</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-q" id="faq-q2" aria-expanded="true" aria-controls="faq-a2">
+                <span>도마를 올리거나 뜨거운 냄비를 올려도 되나요?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2">
+              <p>아니요. 판매처 안내에 따라 도마 대신 쓰거나 뜨거운 냄비·주전자를 올리지 말고, 그릇을 말리는 용도로만 써 주세요. 이 매트는 그 위에서 요리하라는 제품이 아니라, 건조대를 싱크볼
+                위로 옮겨서 조리대를 비워 주는 제품이에요.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-q" id="faq-q3" aria-expanded="true" aria-controls="faq-a3">
+                <span>접시를 세워서 말릴 수 있나요?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+              <p>접시를 꽂는 홈이 없어서 그릇과 접시는 엎어서 올려야 해요. 혼자 먹은 한 끼 설거지처럼 그릇과 컵 몇 개를 말리기에 알맞아요. 접시를 여러 장 세워 말려야 한다면 칸이 나뉜 건조대가
+                더 편할 수 있어요.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 최하단 CTA -->
+    <section class="section cta-final" id="cta-final" aria-labelledby="cta-final-title">
+      <div class="container">
+        <div class="cta-panel" data-reveal>
+          <div class="cta-visual">
+            <div class="cta-photo">
+              <img src="assets/optimized/product1-image5-1000.webp"
+                srcset="assets/optimized/product1-image5-600.webp 600w, assets/optimized/product1-image5-1000.webp 1000w"
+                sizes="(min-width: 1024px) 50vw, 100vw" width="1000" height="1000" loading="lazy"
+                alt="싱크볼 위에 넓게 펼친 회색 롤매트에 그릇과 컵을 올려 말리는 모습">
+            </div>
+            <div class="color-options">
+              <figure>
+                <img src="assets/optimized/crop-color-white.webp" width="312" height="327" loading="lazy"
+                  alt="화이트 색상 롤매트">
+                <figcaption>화이트</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/optimized/crop-color-gray.webp" width="312" height="327" loading="lazy"
+                  alt="그레이 색상 롤매트">
+                <figcaption>그레이</figcaption>
+              </figure>
+            </div>
+            <p class="fine-print">색상은 쿠팡 상품 페이지에서 고를 수 있어요.</p>
+          </div>
+
+          <div class="cta-copy">
+            <p class="eyebrow">좁은 주방을 위한 정리</p>
+            <h2 class="section-title" id="cta-final-title">오늘 저녁 설거지부터, 조리대는 요리에만 쓰세요</h2>
+            <p class="section-lead">싱크볼 위에 펼쳐 그릇을 말리고, 다 쓰면 돌돌 말아 세워 두는 실리콘 식기건조 롤매트예요.</p>
+
+            <ul class="checklist">
+              <li>조리대를 차지하지 않는 그릇 말리는 자리</li>
+              <li>필요한 만큼 펼치고, 다 쓰면 말아서 보관</li>
+              <li>최대 10kg까지 지지하는 일체형 실리콘 코팅 봉</li>
+            </ul>
+
+            <div class="size-reminder">
+              <p>주문 전에 싱크볼 안쪽 폭이 52cm보다 좁은지 확인하셨나요?</p>
+              <a class="text-link js-size-link" href="#size-check">사이즈 확인하기 <span aria-hidden="true">↑</span></a>
+            </div>
+
+            <a class="btn btn-primary btn-block-mobile js-coupang-cta" id="cta-final-button" data-cta="final"
+              href="https://link.coupang.com/a/hCfno91BZs" target="_blank" rel="sponsored noopener">쿠팡에서 가격·옵션 보기</a>
+            <p class="cta-disclosure">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+
+            <ul class="after-click" aria-label="쿠팡 상품 페이지에서 확인할 정보">
+              <li>현재 가격</li>
+              <li>배송 예정일</li>
+              <li>교환·반품 조건</li>
+            </ul>
+
+            <p class="fine-print">교환·반품은 구입처인 쿠팡을 통해 안내받을 수 있어요. 가격과 옵션을 보고 결정해도 늦지 않아요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-inner">
+      <p>이 페이지는 코멧 키친 실리콘 식기건조 롤매트를 소개하는 안내 페이지로, 판매처 공식 페이지가 아니에요.</p>
+      <p>상품 정보와 사진은 판매처 상세페이지를 기준으로 했어요. (확인일 2026-10-02)</p>
+      <p>가격·재고·배송·교환·반품 조건은 쿠팡 상품 페이지에서 최종 확인해 주세요.</p>
+      <p>제품 문의: 수입·판매원 씨피엘비㈜ 소비자상담실 1577-7011</p>
+      <p>이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+      <a class="text-link to-top" href="#hero">맨 위로 <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
