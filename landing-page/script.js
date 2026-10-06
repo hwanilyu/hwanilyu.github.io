@@ -168,3 +168,98 @@
     }
   });
 })();
+
+/* =========================================================
+   GA4 측정: section_view(구간 도달) · cta_click(CTA 클릭)
+   - Google 태그는 index.html <head>의 기본 태그를 재사용 (중복 설치 없음)
+   - page_view 수동 전송, purchase, debug_mode, 개인정보 수집 없음
+   - GA가 차단되거나 로드되지 않아도 링크 이동에는 영향 없음
+   ========================================================= */
+(function () {
+  'use strict';
+
+  // 같은 코드가 다시 실행돼도 관찰자·리스너를 다시 등록하지 않는다.
+  if (window.__landingAnalytics) return;
+  var state = window.__landingAnalytics = {
+    sentSections: {},          // section_name → true (페이지 로드당 1회)
+    boundCtas: new WeakSet()   // 리스너를 붙인 CTA 요소
+  };
+
+  var HEADER_HEIGHT = 64; // styles.css --header-h. 고정 헤더가 가리는 높이는 관찰 영역에서 제외
+
+  function sendEvent(name, params) {
+    // index.html의 기본 태그가 gtag를 정의한다. gtag.js가 차단돼도 dataLayer에만 쌓이고 오류는 나지 않는다.
+    if (typeof window.gtag !== 'function') return;
+    try { window.gtag('event', name, params); } catch (e) { /* 측정 실패가 페이지 동작을 막지 않도록 */ }
+  }
+
+  /* ---------- 1. section_view ---------- */
+  // 각 구간을 대표하는 제목 하나씩만 관찰한다 (긴 section 전체나 사진은 관찰하지 않음).
+  var SECTION_TARGETS = [
+    { id: 'hero-title', name: 'hero' },        // 히어로 h1
+    { id: 'change-title', name: 'detail' },    // 해결책과 변화(#space-change) h2
+    { id: 'cta-final-title', name: 'cta' }     // 최하단 구매 유도(#cta-final) h2
+  ];
+
+  var latestRatio = {}; // section_name → 마지막으로 관찰된 보이는 비율
+
+  function trySendSection(name) {
+    if (state.sentSections[name]) return;
+    if (document.visibilityState !== 'visible') return; // 문서가 실제로 보일 때만 기록
+    if (!(latestRatio[name] >= 0.5)) return;            // 제목 면적의 50% 이상
+    state.sentSections[name] = true;
+    sendEvent('section_view', { section_name: name });
+    if (sectionObserver && targetsByName[name]) sectionObserver.unobserve(targetsByName[name]);
+  }
+
+  var sectionObserver = null;
+  var targetsByName = {};
+  var nameByElement = new Map(); // 관찰 요소 → section_name (DOM 속성은 건드리지 않음)
+
+  if ('IntersectionObserver' in window) {
+    sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var name = nameByElement.get(entry.target);
+        latestRatio[name] = entry.isIntersecting ? entry.intersectionRatio : 0;
+        trySendSection(name);
+      });
+    }, {
+      rootMargin: '-' + HEADER_HEIGHT + 'px 0px 0px 0px',
+      threshold: [0, 0.5, 1]
+    });
+
+    SECTION_TARGETS.forEach(function (t) {
+      var el = document.getElementById(t.id);
+      if (!el) return;
+      targetsByName[t.name] = el;
+      nameByElement.set(el, t.name);
+      sectionObserver.observe(el);
+    });
+
+    // 다른 탭에 있다가 돌아왔을 때, 그 사이 화면에 들어와 있던 제목을 빠뜨리지 않는다.
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState !== 'visible') return;
+      SECTION_TARGETS.forEach(function (t) { trySendSection(t.name); });
+    });
+  }
+
+  /* ---------- 2. cta_click ---------- */
+  // #cta-hero·#cta-final은 버튼을 감싼 영역이므로, 그 안의 쿠팡 링크에만 리스너를 붙인다
+  // (같은 영역의 「사이즈 확인하기」 등 다른 링크는 CTA 클릭으로 세지 않음).
+  var CTA_SELECTORS = [
+    { selector: '#cta-hero .js-coupang-cta, [data-cta-location="hero"]', location: 'hero' },
+    { selector: '#cta-final .js-coupang-cta, [data-cta-location="final"]', location: 'final' }
+  ];
+
+  CTA_SELECTORS.forEach(function (group) {
+    document.querySelectorAll(group.selector).forEach(function (el) {
+      if (state.boundCtas.has(el)) return; // 두 선택자가 같은 요소를 가리켜도 한 번만 등록
+      state.boundCtas.add(el);
+      // 'click'은 마우스 클릭과 키보드 Enter 활성화 모두에서 한 번씩 발생한다.
+      // preventDefault를 하지 않으므로 링크 이동(새 탭)은 지연·차단되지 않는다.
+      el.addEventListener('click', function () {
+        sendEvent('cta_click', { button_location: group.location });
+      });
+    });
+  });
+})();
